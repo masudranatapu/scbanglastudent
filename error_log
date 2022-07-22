@@ -1,0 +1,107 @@
+[14-May-2022 17:46:33 UTC] PHP Warning:  require(/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php): failed to open stream: No such file or directory in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[14-May-2022 17:46:33 UTC] PHP Fatal error:  require(): Failed opening required '/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[14-May-2022 17:46:35 UTC] PHP Warning:  require(/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php): failed to open stream: No such file or directory in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[14-May-2022 17:46:35 UTC] PHP Fatal error:  require(): Failed opening required '/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[14-May-2022 17:47:50 UTC] PHP Warning:  require(/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php): failed to open stream: No such file or directory in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[14-May-2022 17:47:50 UTC] PHP Fatal error:  require(): Failed opening required '/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[14-May-2022 17:47:53 UTC] PHP Warning:  require(/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php): failed to open stream: No such file or directory in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[14-May-2022 17:47:53 UTC] PHP Fatal error:  require(): Failed opening required '/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[14-May-2022 17:55:18 UTC] PHP Warning:  require(/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php): failed to open stream: No such file or directory in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[14-May-2022 17:55:18 UTC] PHP Fatal error:  require(): Failed opening required '/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[14-May-2022 17:56:11 UTC] PHP Warning:  require(/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php): failed to open stream: No such file or directory in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[14-May-2022 17:56:11 UTC] PHP Fatal error:  require(): Failed opening required '/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[14-May-2022 17:56:14 UTC] PHP Warning:  require(/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php): failed to open stream: No such file or directory in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[14-May-2022 17:56:14 UTC] PHP Fatal error:  require(): Failed opening required '/home/unibangla1234/public_html/vendor/composer/../../app/http/helpers.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/unibangla1234/public_html/vendor/composer/autoload_real.php on line 78
+[09-Jul-2022 06:46:35 UTC] PHP Warning:  include(/home/scbangla1234/public_html/app/Http/Kernel.php): Failed to open stream: No such file or directory in /home/scbangla1234/public_html/vendor/composer/ClassLoader.php on line 571
+[09-Jul-2022 06:46:35 UTC] PHP Warning:  include(): Failed opening '/home/scbangla1234/public_html/vendor/composer/../../app/Http/Kernel.php' for inclusion (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/scbangla1234/public_html/vendor/composer/ClassLoader.php on line 571
+[09-Jul-2022 06:46:35 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "App\Http\Kernel" does not exist in /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:809
+Stack trace:
+#0 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(809): ReflectionClass->__construct()
+#1 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(691): Illuminate\Container\Container->build()
+#2 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(796): Illuminate\Container\Container->resolve()
+#3 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(269): Illuminate\Foundation\Application->resolve()
+#4 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(805): Illuminate\Container\Container->Illuminate\Container\{closure}()
+#5 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(691): Illuminate\Container\Container->build()
+#6 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(796): Illuminate\Container\Container->resolve()
+#7 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(637): Illuminate\Foundation\Application->resolve()
+#8 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(781): Illuminate\Container\Container->make()
+#9 /home/scbangla1234/public_html/public/index.php(52): Illuminate\Foundation\Application->make()
+#10 /home/scbangla1234/public_html/index.php(21): require_once('/home/scbangla1...')
+#11 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [App\Http\Kernel] does not exist. in /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:811
+Stack trace:
+#0 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(691): Illuminate\Container\Container->build()
+#1 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(796): Illuminate\Container\Container->resolve()
+#2 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(269): Illuminate\Foundation\Application->resolve()
+#3 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(805): Illuminate\Container\Container->Illuminate\Container\{closure}()
+#4 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(691): Illuminate\Container\Container->build()
+#5 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(796): Illuminate\Container\Container->resolve()
+#6 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(637): Illuminate\Foundation\Application->resolve()
+#7 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(781): Illuminate\Container\Container->make()
+#8 /home/scbangla1234/public_html/public/index.php(52): Illuminate\Foundation\Application->make()
+#9 /home/scbangla1234/public_html/index.php(21): require_once('/home/scbangla1...')
+#10 {main}
+  thrown in /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 811
+[09-Jul-2022 06:46:44 UTC] PHP Warning:  include(/home/scbangla1234/public_html/app/Http/Kernel.php): Failed to open stream: No such file or directory in /home/scbangla1234/public_html/vendor/composer/ClassLoader.php on line 571
+[09-Jul-2022 06:46:44 UTC] PHP Warning:  include(): Failed opening '/home/scbangla1234/public_html/vendor/composer/../../app/Http/Kernel.php' for inclusion (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/scbangla1234/public_html/vendor/composer/ClassLoader.php on line 571
+[09-Jul-2022 06:46:44 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "App\Http\Kernel" does not exist in /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:809
+Stack trace:
+#0 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(809): ReflectionClass->__construct()
+#1 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(691): Illuminate\Container\Container->build()
+#2 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(796): Illuminate\Container\Container->resolve()
+#3 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(269): Illuminate\Foundation\Application->resolve()
+#4 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(805): Illuminate\Container\Container->Illuminate\Container\{closure}()
+#5 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(691): Illuminate\Container\Container->build()
+#6 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(796): Illuminate\Container\Container->resolve()
+#7 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(637): Illuminate\Foundation\Application->resolve()
+#8 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(781): Illuminate\Container\Container->make()
+#9 /home/scbangla1234/public_html/public/index.php(52): Illuminate\Foundation\Application->make()
+#10 /home/scbangla1234/public_html/index.php(21): require_once('/home/scbangla1...')
+#11 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [App\Http\Kernel] does not exist. in /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:811
+Stack trace:
+#0 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(691): Illuminate\Container\Container->build()
+#1 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(796): Illuminate\Container\Container->resolve()
+#2 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(269): Illuminate\Foundation\Application->resolve()
+#3 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(805): Illuminate\Container\Container->Illuminate\Container\{closure}()
+#4 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(691): Illuminate\Container\Container->build()
+#5 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(796): Illuminate\Container\Container->resolve()
+#6 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(637): Illuminate\Foundation\Application->resolve()
+#7 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(781): Illuminate\Container\Container->make()
+#8 /home/scbangla1234/public_html/public/index.php(52): Illuminate\Foundation\Application->make()
+#9 /home/scbangla1234/public_html/index.php(21): require_once('/home/scbangla1...')
+#10 {main}
+  thrown in /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 811
+[09-Jul-2022 06:46:49 UTC] PHP Warning:  include(/home/scbangla1234/public_html/app/Http/Kernel.php): Failed to open stream: No such file or directory in /home/scbangla1234/public_html/vendor/composer/ClassLoader.php on line 571
+[09-Jul-2022 06:46:49 UTC] PHP Warning:  include(): Failed opening '/home/scbangla1234/public_html/vendor/composer/../../app/Http/Kernel.php' for inclusion (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/scbangla1234/public_html/vendor/composer/ClassLoader.php on line 571
+[09-Jul-2022 06:46:49 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "App\Http\Kernel" does not exist in /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:809
+Stack trace:
+#0 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(809): ReflectionClass->__construct()
+#1 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(691): Illuminate\Container\Container->build()
+#2 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(796): Illuminate\Container\Container->resolve()
+#3 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(269): Illuminate\Foundation\Application->resolve()
+#4 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(805): Illuminate\Container\Container->Illuminate\Container\{closure}()
+#5 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(691): Illuminate\Container\Container->build()
+#6 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(796): Illuminate\Container\Container->resolve()
+#7 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(637): Illuminate\Foundation\Application->resolve()
+#8 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(781): Illuminate\Container\Container->make()
+#9 /home/scbangla1234/public_html/public/index.php(52): Illuminate\Foundation\Application->make()
+#10 /home/scbangla1234/public_html/index.php(21): require_once('/home/scbangla1...')
+#11 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [App\Http\Kernel] does not exist. in /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:811
+Stack trace:
+#0 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(691): Illuminate\Container\Container->build()
+#1 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(796): Illuminate\Container\Container->resolve()
+#2 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(269): Illuminate\Foundation\Application->resolve()
+#3 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(805): Illuminate\Container\Container->Illuminate\Container\{closure}()
+#4 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(691): Illuminate\Container\Container->build()
+#5 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(796): Illuminate\Container\Container->resolve()
+#6 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(637): Illuminate\Foundation\Application->resolve()
+#7 /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(781): Illuminate\Container\Container->make()
+#8 /home/scbangla1234/public_html/public/index.php(52): Illuminate\Foundation\Application->make()
+#9 /home/scbangla1234/public_html/index.php(21): require_once('/home/scbangla1...')
+#10 {main}
+  thrown in /home/scbangla1234/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 811
