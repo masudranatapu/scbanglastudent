@@ -7,14 +7,14 @@
     <div class="d-flex h-100 align-items-center justify-content-center mw-700px w-100 mx-auto p-3">
         <div class="w-100 bg-white p-4 position-relative rounded-10px">
             <div class="absolute-top-right">
-                <button type="button" class="bg-transparent text-primary size-34px place-items-center btn"
-                    onclick="closePopup();"><i class="fa-solid fa-xmark fs-22"></i></button>
+                <button type="button" class="bg-transparent text-primary size-34px place-items-center btn" onclick="closePopup();"><i class="fa-solid fa-xmark fs-22"></i>
+                </button>
             </div>
             <h3 class="h3 fw-600 text-secondary text-center pb-lg-2 mb-4">পছন্দের স্কুল/ কলেজ নির্বাচন করুন</h3>
             <div class="px-10px">
                 <div class="search-wrapper shadow-secondary">
-                    <form id="location_search" action="{{ route('location_search') }}" method="GET"
-                        class="row gx-0 align-items-center">
+                    <form id="location_search" action="{{ route('myhome') }}" method="GET" class="row gx-0 align-items-center">
+                        <input type="hidden" value="1" name="sessionGet">
                         <div class="col-md border-end mw-150px">
                             <select class="select3 w-100" name="" id="">
                                 <option value="বিভাগ">বিভাগ</option>
@@ -48,18 +48,6 @@
         </div>
     </div>
 </div>
-
-<script type="text/javascript">
-    function showPopup() {
-        $("#popup-search").fadeIn('100');
-    }
-
-    function closePopup() {
-        $("#popup-search").fadeOut('100');
-    }
-
-</script>
-
 <section class="text-white position-relative z-1">
     <div class="absolute-full z-2 bg-secondary opacity-80"></div>
     <div class="absolute-full z-1">
@@ -2047,21 +2035,30 @@
 @endsection
 
 @prepend('scripts')
-<script>
-    $("#location_search").on('submit', function (e) {
-        e.preventDefault();
-        let url = $(this).attr('action');
-        let data = $(this).serialize();
-        let method = $(this).attr('method');
-        $.ajax({
-            url: url,
-            data: data,
-            success: function (data) {
-                $('#locationSearchResult').empty().html(data);
-            },
-            type: method,
+    <script>
+        $("#location_search").on('submit', function (e) {
+            e.preventDefault();
+            let url = $(this).attr('action');
+            let data = $(this).serialize();
+            let method = $(this).attr('method');
+            $.ajax({
+                url: url,
+                data: data,
+                success: function (data) {
+                    $('#locationSearchResult').empty().html(data);
+                },
+                type: method,
+            });
         });
-    });
+    </script>
+    <script type="text/javascript">
+        function showPopup() {
+            $("#popup-search").fadeIn('100');
+        }
 
-</script>
+        function closePopup() {
+            $("#popup-search").fadeOut('100');
+        }
+
+    </script>
 @endprepend

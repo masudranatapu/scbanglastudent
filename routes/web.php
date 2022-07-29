@@ -13,14 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $featuredPost = App\Models\Post::where('featured', 1)->where('is_approved',1)->orderByDesc('id')->take(12)->get();
-    $featuredInstitute = App\Models\Institute::where('featured_status', 1)->where('is_approved',1)->orderByDesc('id')->get();
-    $topInstitute = App\Models\Institute::where('top_institute', 1)->where('is_approved',1)->orderByDesc('id')->get();
-    return view('frontend.index', compact('featuredPost','featuredInstitute','topInstitute'));
-});
+Route::get('/', 'HomeController@myhome')->name('myhome');
 
 Auth::routes();
+
+Route::get('get-district/ajax/{id}','HomeController@getDistrict');
+Route::get('get-sub-district/ajax/{id}','HomeController@getSubDistrict');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/location_search','PageController@locationSearch')->name('location_search');
@@ -29,12 +27,13 @@ Route::get('/institute-type/{slug}','PageController@instituteType')->name('insti
 Route::get('/sub-institute-type/{slug}','PageController@subInstituteType')->name('sub_institute_type');
 // Show Details Page
 Route::get('division-details','PageController@showDeivisionPage')->name('division_details');
-Route::get('/search-institute-details/','PageController@searchInstituteDetails')->name('search_institute');
+Route::get('/search-institute-details','PageController@searchInstituteDetails')->name('search_institute');
 Route::get('/post-details/{slug}','PageController@postDetails')->name('post_details');
 Route::get('/board/{slug}','PageController@boardDetails')->name('board_details');
 Route::get('/institute-details/{slug}','PageController@instituteDetails')->name('institute_details');
 Route::get('/all-featured-institute','PageController@allFeaturedInstitute')->name('all_featured_institute');
 Route::get('/all-top-institute','PageController@allTopInstitute')->name('all_top_institute');
+Route::get('/approved_by-create','PageController@approvedByCreate')->name('approved_by.create');
 
 // Image Gallery
 Route::resource('image_gallery', 'ImageGalleryController');
@@ -63,6 +62,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('roles', 'Backend\RolesController', ['names' => 'admin.roles']);
     Route::resource('users', 'Backend\UsersController', ['names' => 'admin.users']);
     Route::resource('admins', 'Backend\AdminsController', ['names' => 'admin.admins']);
+    
     // Login Routes
     Route::get('/login', 'Backend\Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login/submit', 'Backend\Auth\LoginController@login')->name('admin.login.submit');
@@ -85,6 +85,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('/division','Backend\DivisionController',['names' => 'admin.division']);
     // District Route Start
     Route::resource('/district','Backend\DistrictController',['names' => 'admin.district']);
+
+    Route::resource('/sub-district','Backend\SubDistrictsController',['names' => 'admin.sub-district']);
+    Route::get('/sub-district/ajax/{id}','Backend\SubDistrictsController@getdistrict');
     // Board Route STart
     Route::resource('/board','Backend\BoardController',['names' => 'admin.board']);
     // Ads Route Start

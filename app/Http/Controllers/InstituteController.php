@@ -52,15 +52,15 @@ class InstituteController extends Controller
             $institute->user_id = $user->id;
             $institute->institute_name = $request->institute_name;
             $institute->institute_slug = Helper::make_slug($request->institute_name);
-            // Get Institute 
-            $instituteTypeId = InstituteType::where('institute_type',$request->institute_type)->first();
-            
-            $institute->institute_type_id = $instituteTypeId->id;
+
+            $institute->institute_type_id = $request->institute_type_id;
             $institute->sub_institute_type_id = $request->sub_institute_type_id;
+            $institute->phone = $request->phone;
+            $institute->eiin_code = $request->eiin_code;
+            $institute->division_id = $request->division_id;
             $institute->division_id = $request->division_id;
             $institute->district_id = $request->district_id;
-            $institute->education_board_id = $request->board_id;
-            $institute->location = $request->location;
+            $institute->sub_district_id = $request->sub_district_id;
             
             $institute->save();
 

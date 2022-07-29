@@ -91,15 +91,32 @@
                         </div>
                         <div class="flex-shrink-0">
                             <ul class="list-unstyled mb-0 text-white ps-4">
-                                <li class="list-inline-item me-3">
-                                    <a href="{{url('/login')}}" class="hov-text-secondary"><i
-                                            class="fa-solid fa-user pe-1"></i>
-                                        Login</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="{{url('/register')}}" class="hov-text-secondary">
-                                        <i class="fa fa-edit pe-1"></i>Register</a>
-                                </li>
+                                @auth
+                                    <li class="list-inline-item me-3">
+                                        <a href="{{ url('home') }}" class="hov-text-secondary"><i
+                                                class="fa-solid fa-user pe-1"></i>
+                                            Profile</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();" class="hov-text-secondary">
+                                            <i class="fa fa-edit pe-1"></i>Logout</a>
+                                    </li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
+                                        @csrf
+                                    </form>
+                                @else 
+                                    <li class="list-inline-item me-3">
+                                        <a href="{{url('/login')}}" class="hov-text-secondary"><i
+                                                class="fa-solid fa-user pe-1"></i>
+                                            Login</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="{{url('/register')}}" class="hov-text-secondary">
+                                            <i class="fa fa-edit pe-1"></i>Register</a>
+                                    </li>
+                                @endauth
                             </ul>
                         </div>
                     </div>

@@ -134,6 +134,18 @@
                         </ul>
                     </li>
                     @endif
+                    @if ($usr->can('district.create') || $usr->can('district.view') ||  $usr->can('district.edit') ||  $usr->can('district.delete'))
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-user"></i><span>
+                            Sub District
+                        </span></a>
+                        <ul class="collapse {{ Route::is('admin.sub-district.create') || Route::is('admin.sub-district.index') || Route::is('admin.sub-district.edit') || Route::is('admin.sub-district.show') ? 'in' : '' }}">
+                            @if ($usr->can('district.view'))
+                                <li class="{{ Route::is('admin.sub-district.index')  || Route::is('admin.sub-district.edit') ? 'active' : '' }}"><a href="{{ route('admin.sub-district.index') }}">Sub District</a></li>
+                            @endif
+                        </ul>
+                    </li>
+                    @endif
                     @if ($usr->can('board.create') || $usr->can('board.view') ||  $usr->can('board.edit') ||  $usr->can('board.delete'))
                     <li>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-user"></i><span>
