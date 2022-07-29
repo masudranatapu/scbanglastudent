@@ -2,52 +2,50 @@
 
 @section('content')
 
-<div class="fixed-full z-1035" id="popup-search">
-    <div class="absolute-full z--1 bg-dark opacity-60"></div>
-    <div class="d-flex h-100 align-items-center justify-content-center mw-700px w-100 mx-auto p-3">
-        <div class="w-100 bg-white p-4 position-relative rounded-10px">
-            <div class="absolute-top-right">
-                <button type="button" class="bg-transparent text-primary size-34px place-items-center btn" onclick="closePopup();"><i class="fa-solid fa-xmark fs-22"></i>
-                </button>
-            </div>
-            <h3 class="h3 fw-600 text-secondary text-center pb-lg-2 mb-4">পছন্দের স্কুল/ কলেজ নির্বাচন করুন</h3>
-            <div class="px-10px">
-                <div class="search-wrapper shadow-secondary">
-                    <form id="location_search" action="{{ route('myhome') }}" method="GET" class="row gx-0 align-items-center">
-                        <input type="hidden" value="1" name="sessionGet">
-                        <div class="col-md border-end mw-150px">
-                            <select class="select3 w-100" name="" id="">
-                                <option value="বিভাগ">বিভাগ</option>
-                                <option value="চট্টগ্রাম">চট্টগ্রাম</option>
-                                <option value="বরিশাল">বরিশাল</option>
-                                <option value="খুলনা">খুলনা</option>
-                            </select>
-                        </div>
-                        <div class="col-md border-end mw-150px">
-                            <select class="select3 w-100" name="" id="">
-                                <option value="জেলা">জেলা</option>
-                                <option value="চট্টগ্রাম">চট্টগ্রাম</option>
-                                <option value="বরিশাল">বরিশাল</option>
-                                <option value="খুলনা">খুলনা</option>
-                            </select>
-                        </div>
-                        <div class="col-md border-end mw-150px">
-                            <select class="select3 w-100" name="" id="">
-                                <option value="উপজেলা">উপজেলা</option>
-                                <option value="চট্টগ্রাম">চট্টগ্রাম</option>
-                                <option value="বরিশাল">বরিশাল</option>
-                                <option value="খুলনা">খুলনা</option>
-                            </select>
-                        </div>
-                        <div class="w-md-fit p-3 d-grid">
-                            <button type="submit" class="btn-primary px-4">সার্চ করুন</button>
-                        </div>
-                    </form>
+@if(session('sessionGet') == 0)
+    <div class="fixed-full z-1035" id="popup-search">
+        <div class="absolute-full z--1 bg-dark opacity-60"></div>
+        <div class="d-flex h-100 align-items-center justify-content-center mw-700px w-100 mx-auto p-3">
+            <div class="w-100 bg-white p-4 position-relative rounded-10px">
+                <div class="absolute-top-right">
+                    <button type="button" class="bg-transparent text-primary size-34px place-items-center btn" onclick="closePopup();"><i class="fa-solid fa-xmark fs-22"></i>
+                    </button>
+                </div>
+                @php
+                    $divisions = DB::table("divisions")->latest()->get();
+                @endphp
+                <h3 class="h3 fw-600 text-secondary text-center pb-lg-2 mb-4">পছন্দের স্কুল/ কলেজ নির্বাচন করুন</h3>
+                <div class="px-10px">
+                    <div class="search-wrapper shadow-secondary">
+                        <form action="{{ route('myhome') }}" method="GET" class="row gx-0 align-items-center">
+                            <input type="hidden" value="1" name="sessionGet">
+                            <div class="col-md border-end mw-150px">
+                                <select class="form-control" name="division_id" id="divId">
+                                    @foreach($divisions as $division)
+                                        <option value="{{$division->id}}">{{$division->division_name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md border-end mw-150px">
+                                <select class="form-control" name="district_id" id="disId">
+                                    <option value="" selected disabled>Select division</option>
+                                </select>
+                            </div>
+                            <div class="col-md border-end mw-150px">
+                                <select class="form-control" name="sub_district_id" id="subDisId">
+                                    <option value="" selected disabled>Select division</option>
+                                </select>
+                            </div>
+                            <div class="w-md-fit p-3 d-grid">
+                                <button type="submit" class="btn-primary px-4">সার্চ করুন</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+@endif
 <section class="text-white position-relative z-1">
     <div class="absolute-full z-2 bg-secondary opacity-80"></div>
     <div class="absolute-full z-1">
@@ -2060,5 +2058,53 @@
             $("#popup-search").fadeOut('100');
         }
 
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#divId').on('change', function(){
+                var divId = $(this).val();
+                // alert(divId);
+                if(divId) {
+                    $.ajax({
+                        url: "{{ url('/get-district/ajax') }}/"+divId,
+                        type:"GET",
+                        dataType:"json",
+                        success:function(data) {
+                            $('#subDisId').html('');
+                            $('#subDisId').append('<option value="" disabled selected> নির্বাচন করুন </option>');
+                            var d =$('#disId').empty();
+                            $('#disId').append('<option value="" disabled selected> নির্বাচন করুন </option>');
+                            $.each(data, function(key, value){
+                                $('#disId').append('<option value="'+ value.id +'">' + value.district_name + '</option>');
+                            });
+                        },
+                    });
+                } else {
+                    alert('danger');
+                }
+            });
+
+            $('#disId').on('change', function(){
+                var disId = $(this).val();
+                // alert(disId);
+                if(disId) {
+                    $.ajax({
+                        url: "{{  url('/get-sub-district/ajax') }}/"+disId,
+                        type:"GET",
+                        dataType:"json",
+                        success:function(data) {
+                        var d =$('#subDisId').empty();
+                            $('#subDisId').append('<option value="" disabled selected> -- নির্বাচন করুন -- </option>');
+                            $.each(data, function(key, value){
+                                $('#subDisId').append('<option value="'+ value.id +'">' + value.name + '</option>');
+                            });
+                        },
+                    });
+                } else {
+                    alert('danger');
+                }
+            });
+
+        });
     </script>
 @endprepend
